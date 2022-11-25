@@ -14,23 +14,198 @@ Dark green: #28b485
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
+  color: #777;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 30px;
 }
 
 .header {
-  height: 95vh;
   background-image: linear-gradient(
     to right bottom,
     rgba(126, 213, 111, 0.8),
     rgba(40, 180, 133, 0.8)),
-  url(../img/hero.jpg);
-  background-size: cover;
+    url(../img/hero.jpg);
   background-position: top;
-
+  background-size: cover;
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+}
+
+.logo-box {
+  left: 40px;
+  position: absolute;
+  top: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+/* Se quiser levar a animacao para outros lugares - quando passar o mouse por cima - e ter a animação
+
+.logo:hover {
+  animation: moveInRight 1s ease-out;
+}
+
+*/
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  /* para nao ter "tremor" na animacao precisa disso*/
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  /* funcoes de animação das letras */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  /* ease out - começa devagar e termina rapido*/
+  /* ease in - começa rapido e termina devagar*/
+  animation-timing-function: ease-out;
+
+  /* outras funcoes de animacao interessantes*/
+  /*
+  animation-delay: 3s;   - entra com atraso a animação
+  animation-iteration-count: 3; repete 3X a msm animacao
+  */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  /* Escrevendo de maneira reduzida a animacao*/
+  animation: moveInRight 1s ease-out;
+  /* ao inves de colocar 3 linhas
+  animation: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; */
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80%{
+    transform: translateX(-10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 15px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* sombra do botao posicao, posicao, blurry(embaçado), cor*/
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
+}
+
+/* quando clica no botao - efeito que ele "abaixa" */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
+}
+
+/* Pseudo - Elemento  faz parecer um botao - coloca atras e anima - faz aquele quadrado animado quando passa por cima - Considerado um filho do botao*/
+
+.btn::after {
+  /* precisa especificar o content, se não, não aparece o pseudoElement */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: white;
+}
+
+.btn:hover::after {
+  /* faz escalar o tamanho para "o valor que vc quiser" a mais do tamanho original */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+
+  /* animacao é aplicada a 0 antes da animacao começar */
+  animation-fill-mode: backwards;
 }
