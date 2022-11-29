@@ -43,13 +43,13 @@ body {
   height: 95vh;
 }
 
-.logo-box {
+.header__logo-box {
   left: 4rem;
   position: absolute;
   top: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
@@ -61,7 +61,7 @@ body {
 
 */
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -78,7 +78,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -98,7 +98,7 @@ body {
   */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -181,7 +181,7 @@ body {
   
 }
 
-.btn-white {
+.btn--white {
   background-color: white;
   color: #777;
 }
@@ -202,7 +202,7 @@ body {
   transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: white;
 }
 
@@ -212,7 +212,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
 
   /* animacao é aplicada a 0 antes da animacao começar */
