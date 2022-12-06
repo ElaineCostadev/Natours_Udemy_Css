@@ -1,0 +1,28 @@
+{
+  "name": "natours_udemy_css",
+  "version": "1.0.0",
+  "description": "Lading page for natours and pratice css",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElaineCostadev/Natours_Udemy_Css.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "scss"
+  ],
+  "author": "Elaine Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElaineCostadev/Natours_Udemy_Css/issues"
+  },
+  "homepage": "https://github.com/ElaineCostadev/Natours_Udemy_Css#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

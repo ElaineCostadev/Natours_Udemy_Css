@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  /* herança forçada  = inherit */
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // Define o que 1rem é 
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

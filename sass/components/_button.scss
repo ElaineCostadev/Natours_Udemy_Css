@@ -1,0 +1,63 @@
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    /* sombra do botao posicao, posicao, blurry(embaçado), cor*/
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+    &::after {
+      /* faz escalar o tamanho para "o valor que vc quiser" a mais do tamanho original */
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  
+  /* quando clica no botao - efeito que ele "abaixa" */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  /* Pseudo - Elemento  faz parecer um botao - coloca atras e anima - faz aquele quadrado animado quando passa por cima - Considerado um filho do botao*/
+  
+  &::after {
+    /* precisa especificar o content, se não, não aparece o pseudoElement */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* animacao é aplicada a 0 antes da animacao começar */
+    animation-fill-mode: backwards;
+  }
+
+}

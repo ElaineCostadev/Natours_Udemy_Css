@@ -1,0 +1,51 @@
+body {
+  color: $color-grey-dark;
+  font-family: "Lato", sans-serif;
+  /* font-size: 16px; */
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  /* para nao ter "tremor" na animacao precisa disso*/
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+  
+    /* funcoes de animação das letras */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* ease out - começa devagar e termina rapido*/
+    /* ease in - começa rapido e termina devagar*/
+    animation-timing-function: ease-out;
+  
+    /* outras funcoes de animacao interessantes*/
+    /*
+    animation-delay: 3s;   - entra com atraso a animação
+    animation-iteration-count: 3; repete 3X a msm animacao
+    */
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+  
+    /* Escrevendo de maneira reduzida a animacao*/
+    animation: moveInRight 1s ease-out;
+    /* ao inves de colocar 3 linhas
+    animation: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; */
+  }
+}
