@@ -1,0 +1,9 @@
+// limpar os erros de flutuacao dos pseudo elementos - after
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
